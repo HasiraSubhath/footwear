@@ -35,15 +35,15 @@ class UserInsertionActivity : AppCompatActivity() {
         etFSize = findViewById(R.id.etFSize)
         btnSaveData = findViewById(R.id.btnSave)
 
-        dbRef = FirebaseDatabase.getInstance().getReference("UserDB")
+        dbRef = FirebaseDatabase.getInstance().getReference("FootDB")
 
         btnSaveData.setOnClickListener {
-            saveUserData()
+            saveFootData()
         }
 
     }
 
-    private fun saveUserData() {
+    private fun saveFootData() {
 
         //Geting Values
         val fName = etFName.text.toString()
@@ -56,21 +56,21 @@ class UserInsertionActivity : AppCompatActivity() {
         if (fName.isEmpty() || fType.isEmpty() || fMfd.isEmpty() || fPrice.isEmpty() || fSize.isEmpty()) {
 
             if (fName.isEmpty()) {
-                etFName.error = "Please enter Name"
+                etFName.error = "Enter FootWear  Name"
             }
             if (fType.isEmpty()) {
-                etFType.error = "Please Enter Address"
+                etFType.error = "Enter FootWear Type"
             }
             if (fMfd.isEmpty()) {
-                etFMfd.error = "Please Enter Phone Number"
+                etFMfd.error = "Enter FootWear MFD"
             }
             if (fPrice.isEmpty()) {
-                etFPrice.error = "Please Enter Email"
+                etFPrice.error = "Enter FootWear Price"
             }
             if (fSize.isEmpty()) {
-                etFSize.error = "Please Enter NIC"
+                etFSize.error = "Enter FootWear Size (US)"
             }
-            Toast.makeText(this, "please check Some areas are not filled", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "= Some areas are not filled", Toast.LENGTH_LONG).show()
         } else {
 
             //genrate unique ID
@@ -80,7 +80,7 @@ class UserInsertionActivity : AppCompatActivity() {
 
             dbRef.child(fId).setValue(payment)
                 .addOnCompleteListener {
-                    Toast.makeText(this, "User insert successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Data insert successfully", Toast.LENGTH_SHORT).show()
 
                     //clear data after insert
                     etFName.text.clear()

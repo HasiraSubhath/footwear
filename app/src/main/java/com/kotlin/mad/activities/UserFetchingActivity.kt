@@ -31,17 +31,17 @@ class UserFetchingActivity : AppCompatActivity() {
 
         userList = arrayListOf<UserModel>()
 
-        getUserData()
+        getFootData()
 
 
     }
 
-    private fun getUserData() {
+    private fun getFootData() {
 
         empRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("UserDB")
+        dbRef = FirebaseDatabase.getInstance().getReference("FootDB")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -50,7 +50,7 @@ class UserDetailsActivity : AppCompatActivity() {
     private fun deleteRecord(
         id: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("UserDB").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("FootDB").child(id)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
@@ -123,7 +123,7 @@ class UserDetailsActivity : AppCompatActivity() {
         alertDialog.show()
 
         btnUpdateData.setOnClickListener {
-            updateUserData(
+            updateFootData(
                 fId,
                 etFName.text.toString(),
                 etFType.text.toString(),
@@ -148,16 +148,16 @@ class UserDetailsActivity : AppCompatActivity() {
 
     }
 
-    private fun updateUserData(
+    private fun updateFootData(
         id: String,
         name: String,
-        address: String,
-        number: String,
-        email: String,
-        nic: String
+        type: String,
+        mfd: String,
+        price: String,
+        size: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("UserDB").child(id)
-        val userInfo = UserModel(id, name, address, number, email, nic )
-        dbRef.setValue(userInfo)
+        val dbRef = FirebaseDatabase.getInstance().getReference("FootDB").child(id)
+        val footInfo = UserModel(id, name, type, mfd, price, size )
+        dbRef.setValue(footInfo)
     }
 }
