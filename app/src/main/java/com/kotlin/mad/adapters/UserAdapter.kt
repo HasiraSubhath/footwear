@@ -28,7 +28,7 @@ class UserAdapter(private val userList: ArrayList<UserModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentEmp = userList[position]
-        holder.tvUName.text = currentEmp.uName
+        holder.tvFName.text = currentEmp.fName
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +37,7 @@ class UserAdapter(private val userList: ArrayList<UserModel>) :
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
-        val tvUName : TextView = itemView.findViewById(R.id.tvUName)
+        val tvFName : TextView = itemView.findViewById(R.id.tvFName)
 
         init {
             itemView.setOnClickListener {

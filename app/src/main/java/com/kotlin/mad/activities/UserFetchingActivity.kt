@@ -60,12 +60,12 @@ class UserFetchingActivity : AppCompatActivity() {
                             val intent = Intent(this@UserFetchingActivity, UserDetailsActivity::class.java)
 
                             //put extra(passing data to another activity)
-                            intent.putExtra("uId", userList[position].uId)
-                            intent.putExtra("uName", userList[position].uName)
-                            intent.putExtra("uAddress", userList[position].uAddress)
-                            intent.putExtra("uNumber", userList[position].uNumber)
-                            intent.putExtra("uEmail", userList[position].uEmail)
-                            intent.putExtra("uNic", userList[position].uNic)
+                            intent.putExtra("fId", userList[position].fId)
+                            intent.putExtra("fName", userList[position].fName)
+                            intent.putExtra("fType", userList[position].fType)
+                            intent.putExtra("fMfd", userList[position].fMfd)
+                            intent.putExtra("fPrice", userList[position].fPrice)
+                            intent.putExtra("fSize", userList[position].fSize)
                             startActivity(intent)
                         }
 

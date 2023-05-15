@@ -1,12 +1,12 @@
 package com.kotlin.mad.models
 
 data class UserModel(
-    var uId: String? = null,
-    var uName: String? = null,
-    var uAddress: String? = null,
-    var uNumber: String? = null,
-    var uEmail: String? = null,
-    var uNic: String? = null
+    var fId: String? = null,
+    var fName: String? = null,
+    var fType: String? = null,
+    var fMfd: String? = null,
+    var fPrice: String? = null,
+    var fSize: String? = null
     
 
 )

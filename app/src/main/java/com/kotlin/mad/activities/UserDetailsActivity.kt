@@ -14,12 +14,12 @@ import com.google.firebase.database.FirebaseDatabase
 
 class UserDetailsActivity : AppCompatActivity() {
 
-    private lateinit var tvUId: TextView
-    private lateinit var tvUName: TextView
-    private lateinit var tvUAddress: TextView
-    private lateinit var tvUNumber: TextView
-    private lateinit var tvUEmail: TextView
-    private lateinit var tvUNic: TextView
+    private lateinit var tvFId: TextView
+    private lateinit var tvFName: TextView
+    private lateinit var tvFType: TextView
+    private lateinit var tvFMfd: TextView
+    private lateinit var tvFPrice: TextView
+    private lateinit var tvFSize: TextView
 
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
@@ -34,14 +34,14 @@ class UserDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("uId").toString(),
-                intent.getStringExtra("uName").toString()
+                intent.getStringExtra("fId").toString(),
+                intent.getStringExtra("fName").toString()
             )
         }
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("uId").toString()
+                intent.getStringExtra("fId").toString()
             )
         }
 
@@ -69,12 +69,12 @@ class UserDetailsActivity : AppCompatActivity() {
 
 
     private fun initView() {
-        tvUId = findViewById(R.id.tvUId)
-        tvUName = findViewById(R.id.tvUName)
-        tvUAddress = findViewById(R.id.tvUAddress)
-        tvUNumber = findViewById(R.id.tvUNumber)
-        tvUEmail = findViewById(R.id.tvUEmail)
-        tvUNic = findViewById(R.id.tvUNic)
+        tvFId = findViewById(R.id.tvFId)
+        tvFName = findViewById(R.id.tvFName)
+        tvFType = findViewById(R.id.tvFType)
+        tvFMfd = findViewById(R.id.tvFMfd)
+        tvFPrice = findViewById(R.id.tvFPrice)
+        tvFSize = findViewById(R.id.tvFSize)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
@@ -82,18 +82,18 @@ class UserDetailsActivity : AppCompatActivity() {
 
     private fun setValuesToViews() {
         //passing data
-        tvUId.text = intent.getStringExtra("uId")
-        tvUName.text = intent.getStringExtra("uName")
-        tvUAddress.text = intent.getStringExtra("uAddress")
-        tvUNumber.text = intent.getStringExtra("uNumber")
-        tvUEmail.text = intent.getStringExtra("uEmail")
-        tvUNic.text = intent.getStringExtra("uNic")
+        tvFId.text = intent.getStringExtra("fId")
+        tvFName.text = intent.getStringExtra("fName")
+        tvFType.text = intent.getStringExtra("fType")
+        tvFMfd.text = intent.getStringExtra("fMfd")
+        tvFPrice.text = intent.getStringExtra("fPrice")
+        tvFSize.text = intent.getStringExtra("fSize")
 
     }
 
     private fun openUpdateDialog(
-        uId: String,
-        uName: String
+        fId: String,
+        fName: String
 
     ) {
         val mDialog = AlertDialog.Builder(this)
@@ -102,45 +102,45 @@ class UserDetailsActivity : AppCompatActivity() {
 
         mDialog.setView(mDialogView)
 
-        val etUName = mDialogView.findViewById<EditText>(R.id.etUName)
-        val etUAddress = mDialogView.findViewById<EditText>(R.id.etUAddress)
-        val etUNumber = mDialogView.findViewById<EditText>(R.id.etUNumber)
-        val etUEmail = mDialogView.findViewById<EditText>(R.id.etUEmail)
-        val etUNic = mDialogView.findViewById<EditText>(R.id.etUNic)
+        val etFName = mDialogView.findViewById<EditText>(R.id.etFName)
+        val etFType = mDialogView.findViewById<EditText>(R.id.etFType)
+        val etFMfd = mDialogView.findViewById<EditText>(R.id.etFMfd)
+        val etFPrice = mDialogView.findViewById<EditText>(R.id.etFPrice)
+        val etFSize = mDialogView.findViewById<EditText>(R.id.etFSize)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
         //update
-        etUName.setText(intent.getStringExtra("uName").toString())
-        etUAddress.setText(intent.getStringExtra("uAddress").toString())
-        etUNumber.setText(intent.getStringExtra("uNumber").toString())
-        etUEmail.setText(intent.getStringExtra("uEmail").toString())
-        etUNic.setText(intent.getStringExtra("uNic").toString())
+        etFName.setText(intent.getStringExtra("fName").toString())
+        etFType.setText(intent.getStringExtra("fType").toString())
+        etFMfd.setText(intent.getStringExtra("fMfd").toString())
+        etFPrice.setText(intent.getStringExtra("fPrice").toString())
+        etFSize.setText(intent.getStringExtra("fSize").toString())
 
-        mDialog.setTitle("Updating $uName Record")
+        mDialog.setTitle("Updating $fName Record")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
 
         btnUpdateData.setOnClickListener {
             updateUserData(
-                uId,
-                etUName.text.toString(),
-                etUAddress.text.toString(),
-                etUNumber.text.toString(),
-                etUEmail.text.toString(),
-                etUNic.text.toString()
+                fId,
+                etFName.text.toString(),
+                etFType.text.toString(),
+                etFMfd.text.toString(),
+                etFPrice.text.toString(),
+                etFSize.text.toString()
 
             )
 
             Toast.makeText(applicationContext, " Data Updated", Toast.LENGTH_LONG).show()
 
             //we are setting updated data to our text views
-            tvUName.text = etUName.text.toString()
-            tvUAddress.text = etUAddress.text.toString()
-            tvUNumber.text = etUNumber.text.toString()
-            tvUEmail.text = etUEmail.text.toString()
-            tvUNic.text = etUNic.text.toString()
+            tvFName.text = etFName.text.toString()
+            tvFType.text = etFType.text.toString()
+            tvFMfd.text = etFMfd.text.toString()
+            tvFPrice.text = etFPrice.text.toString()
+            tvFSize.text = etFSize.text.toString()
 
             alertDialog.dismiss()
 

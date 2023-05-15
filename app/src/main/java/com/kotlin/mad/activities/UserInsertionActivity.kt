@@ -14,11 +14,11 @@ class UserInsertionActivity : AppCompatActivity() {
 
 
 
-    private lateinit var etUName: EditText
-    private lateinit var etUAddress: EditText
-    private lateinit var etUNumber: EditText
-    private lateinit var etUEmail: EditText
-    private lateinit var etUNic: EditText
+    private lateinit var etFName: EditText
+    private lateinit var etFType: EditText
+    private lateinit var etFMfd: EditText
+    private lateinit var etFPrice: EditText
+    private lateinit var etFSize: EditText
     private lateinit var btnSaveData: Button
 
     private lateinit var dbRef: DatabaseReference
@@ -28,11 +28,11 @@ class UserInsertionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_insertion)
 
-        etUName = findViewById(R.id.etUName)
-        etUAddress = findViewById(R.id.etUAddress)
-        etUNumber = findViewById(R.id.etUNumber)
-        etUEmail = findViewById(R.id.etUEmail)
-        etUNic = findViewById(R.id.etUNic)
+        etFName = findViewById(R.id.etFName)
+        etFType = findViewById(R.id.etFType)
+        etFMfd = findViewById(R.id.etFMfd)
+        etFPrice = findViewById(R.id.etFPrice)
+        etFSize = findViewById(R.id.etFSize)
         btnSaveData = findViewById(R.id.btnSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("UserDB")
@@ -46,48 +46,48 @@ class UserInsertionActivity : AppCompatActivity() {
     private fun saveUserData() {
 
         //Geting Values
-        val uName = etUName.text.toString()
-        val uAddress = etUAddress.text.toString()
-        val uNumber = etUNumber.text.toString()
-        val uEmail = etUEmail.text.toString()
-        val uNic = etUNic.text.toString()
+        val fName = etFName.text.toString()
+        val fType = etFType.text.toString()
+        val fMfd = etFMfd.text.toString()
+        val fPrice = etFPrice.text.toString()
+        val fSize = etFSize.text.toString()
 
         //validation
-        if (uName.isEmpty() || uAddress.isEmpty() || uNumber.isEmpty() || uEmail.isEmpty() || uNic.isEmpty()) {
+        if (fName.isEmpty() || fType.isEmpty() || fMfd.isEmpty() || fPrice.isEmpty() || fSize.isEmpty()) {
 
-            if (uName.isEmpty()) {
-                etUName.error = "Please enter Name"
+            if (fName.isEmpty()) {
+                etFName.error = "Please enter Name"
             }
-            if (uAddress.isEmpty()) {
-                etUAddress.error = "Please Enter Address"
+            if (fType.isEmpty()) {
+                etFType.error = "Please Enter Address"
             }
-            if (uNumber.isEmpty()) {
-                etUNumber.error = "Please Enter Phone Number"
+            if (fMfd.isEmpty()) {
+                etFMfd.error = "Please Enter Phone Number"
             }
-            if (uEmail.isEmpty()) {
-                etUEmail.error = "Please Enter Email"
+            if (fPrice.isEmpty()) {
+                etFPrice.error = "Please Enter Email"
             }
-            if (uNic.isEmpty()) {
-                etUNic.error = "Please Enter NIC"
+            if (fSize.isEmpty()) {
+                etFSize.error = "Please Enter NIC"
             }
             Toast.makeText(this, "please check Some areas are not filled", Toast.LENGTH_LONG).show()
         } else {
 
             //genrate unique ID
-            val uId = dbRef.push().key!!
+            val fId = dbRef.push().key!!
 
-            val payment = UserModel(uId, uName, uAddress, uNumber, uEmail, uNic)
+            val payment = UserModel(fId, fName, fType, fMfd, fPrice, fSize)
 
-            dbRef.child(uId).setValue(payment)
+            dbRef.child(fId).setValue(payment)
                 .addOnCompleteListener {
                     Toast.makeText(this, "User insert successfully", Toast.LENGTH_SHORT).show()
 
                     //clear data after insert
-                    etUName.text.clear()
-                    etUAddress.text.clear()
-                    etUNumber.text.clear()
-                    etUEmail.text.clear()
-                    etUNic.text.clear()
+                    etFName.text.clear()
+                    etFType.text.clear()
+                    etFMfd.text.clear()
+                    etFPrice.text.clear()
+                    etFSize.text.clear()
 
 
                 }.addOnFailureListener { err ->

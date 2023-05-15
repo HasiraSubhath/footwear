@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etUName"
+        android:id="@+id/etFName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/etUNumber"
+        android:id="@+id/etFMfd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -53,10 +53,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/etFType" />
 
     <EditText
-        android:id="@+id/etUEmail"
+        android:id="@+id/etFPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
@@ -68,10 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/etFMfd" />
 
     <EditText
-        android:id="@+id/etUAddress"
+        android:id="@+id/etFType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -83,11 +83,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUName" />
+        app:layout_constraintTop_toBottomOf="@+id/etFName" />
 
 
     <EditText
-        android:id="@+id/etUNic"
+        android:id="@+id/etFSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -100,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etFPrice" />
 
     <Button
         android:id="@+id/btnSave"
@@ -114,6 +114,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUNic" />
+        app:layout_constraintTop_toBottomOf="@+id/etFSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
