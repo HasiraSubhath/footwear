@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="51dp"
-        android:backgroundTint="@color/Darkgreen"
+        android:backgroundTint="@color/purple_700"
         android:fontFamily="@font/tomorrow_medium"
         android:text="Add New footwear"
         app:layout_constraintBottom_toBottomOf="parent"
