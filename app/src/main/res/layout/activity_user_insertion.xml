@@ -7,6 +7,18 @@
 
     tools:context=".activities.UserInsertionActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="103dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        app:srcCompat="@drawable/shoe" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="179dp"
@@ -16,7 +28,7 @@
         android:layout_marginEnd="52dp"
         android:fontFamily="@font/tomorrow_medium"
         android:gravity="center"
-        android:text="new \nUser profile"
+        android:text="Add \nnew footwear"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -33,7 +45,7 @@
         android:layout_marginTop="44dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="Enter User Name"
+        android:hint="Enter Footwear Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,9 +59,9 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:maxLength="10"
-        android:hint="Phone Number"
+        android:hint="Manufacture Date"
         android:inputType="number"
+        android:maxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,9 +74,8 @@
         android:layout_marginTop="27dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="E-mail"
+        android:hint="Price"
         android:inputType="textPersonName"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,8 +88,7 @@
         android:layout_marginTop="22dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="Address"
-
+        android:hint="Enter type"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,10 +103,9 @@
         android:layout_marginTop="26dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="NIC"
+        android:hint="Size"
         android:inputType="textPersonName"
         android:maxLength="12"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +119,7 @@
         android:layout_marginBottom="51dp"
         android:backgroundTint="@color/Darkgreen"
         android:fontFamily="@font/tomorrow_medium"
-        android:text="Submit"
+        android:text="Add New footwear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

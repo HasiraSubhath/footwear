@@ -13,7 +13,7 @@
         android:layout_marginTop="204dp"
         android:fontFamily="@font/tomorrow_medium"
         android:gravity="center"
-        android:text="USer profiles"
+        android:text="footwear"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -25,15 +25,15 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_width="141dp"
+        android:layout_height="158dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/shoe" />
 
     <Button
         android:id="@+id/btnInsertData"
@@ -44,7 +44,7 @@
         android:layout_marginEnd="144dp"
         android:backgroundTint="@color/Darkgreen"
         android:fontFamily="@font/tomorrow_medium"
-        android:text="Add New"
+        android:text="Add New "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
